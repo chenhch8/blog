@@ -79,3 +79,4 @@ app.use(bodyParser.urlencoded({ extended: true }));
 	* model：是一个我们想要生成的json文档的类，类似sql中的创建表步骤
 3. 添加方法：
 	* 方法一：在schema阶段——对schema的返回对象的methods属性中添加方法，注意是在model前。
+[待完善]
