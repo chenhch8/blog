@@ -1,0 +1,18 @@
+<!-- <img *ngIf="isLoading" src="./app/assets/images/loading.gir" /> -->
+
+<div *ngIf="articles && articles.length" class="row">
+  <div *ngFor="let article of articles" class="col-sm-6 col-md-4">
+    <div class="thumbnail">
+      <img src="{{ article.imgUrl }}" />
+      <div class="caption">
+        <h3>{{ article.title }}</h3>
+        <p>{{ article.description }}</p>
+        <p><button class="btn btn-primary" (click)="goToDetail(article._id)">详情</button></p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div *ngIf="articles && !articles.length && !isLoading || !articles">
+  <h2 style="padding-left: 5rem">尚无文章</h2>
+</div>

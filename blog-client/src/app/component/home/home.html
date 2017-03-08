@@ -1,0 +1,14 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10">
+      <div class="panel panel-default">
+        <div class="paned-body">
+          <articles-list [userId]="userId"></articles-list>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <users-list (userId)="getUserId($event)"></users-list>
+    </div>
+  </div>
+</div>

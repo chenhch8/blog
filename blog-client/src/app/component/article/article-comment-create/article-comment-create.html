@@ -1,0 +1,10 @@
+<div class="page-header" style="padding: 0; margin: 0 0 1rem;">
+  <img class="block-center" style="width: 10rem; height: 10rem; border-radius: 5rem; margin: 0 2rem 2rem" src="{{ user.imgUrl }}" />
+  <h4 style="display: inline-block;">发表您的看法</h4>
+</div>
+<form (ngSubmit)="onSubmit()">
+  <div class="form-group">
+    <textarea name="text" type="text" class="form-control" rows="15" [(ngModel)]="textInput"></textarea>
+  </div>
+  <button type="submit" class="btn btn-primary pull-right" [disabled]="!textInput" data-toggle="modal" data-target="#myModal">发表</button>
+</form>

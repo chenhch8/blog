@@ -1,0 +1,48 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form class="form-horizontal" #f="ngForm">
+      <div class="page-header">
+        <h3>登陆</h3>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="email">
+          账号
+        </label>
+        <div class="col-md-4">
+          <input type="text" name="email" class="form-control" ngModel>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="pwd">
+          密码
+        </label>
+        <div class="col-md-4">
+          <input type="password" name="pwd" class="form-control" ngModel>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+          <div class="checkbox">
+            <label>
+              <input type="checkbox" name="remember" ngModel> 是否记住我
+            </label>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn btn-success pull-left" (click)="login(f.value)" [disabled]="!f.value.email || !f.value.pwd" data-target="#myModal" data-toggle="modal">登陆</button>
+          <a class="btn btn-default pull-right" [routerLink]="['/register']">注册</a>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
+
+<!-- 弹出窗口 -->
+<!-- <alert-pop modalId="myModal" [message]="message" [callback]="callback"></alert-pop> -->

@@ -1,0 +1,27 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <article-detail *ngIf="article" [article]="article"></article-detail>
+    <div *ngIf="!article">
+      <h3>未选定文章</h3>
+    </div>
+    <button class="btn btn-primary pull-right" (click)="goBack()">Back</button>
+  </div>
+</div>
+
+<div *ngIf="comments && comments.length">
+  <div class="panel panel-default">
+    <div class="page-header">
+      <h2 style="padding-left: 4rem">评论详情</h2>
+    </div>
+    <div class="panel-body">
+      <article-comment *ngFor="let comment of comments" [comment]="comment">{{ comment }}</article-comment>
+      <page-slice [size]="pageSize | async" (pageId)="setPage($event)"></page-slice>
+    </div>
+  </div>
+</div>
+
+<div class="panel panel-default">
+  <div class="panel-body">
+    <article-comment-create (comment)="submit($event)"></article-comment-create>
+  </div>
+</div>

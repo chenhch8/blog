@@ -1,0 +1,59 @@
+<div class="panel panel-default">
+  <div class="panel-body">
+    <form class="form-horizontal" #f="ngForm">
+      <div class="page-header">
+        <h3>注册</h3>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="email">
+          邮箱
+        </label>
+        <div class="col-md-4">
+          <input type="email" name="email" class="form-control" placeholder="邮箱" ngModel>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="password">
+          密码
+        </label>
+        <div class="col-md-4">
+          <input type="password" name="pwd" class="form-control" placeholder="密码" ngModel>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="pwd">
+          重复密码
+        </label>
+        <div class="col-md-4">
+          <input type="password" name="pwd2" class="form-control" placeholder="重复密码" ngModel>
+        </div>
+      </div>
+
+      <div *ngIf="f.value.pwd !== f.value.pwd2 && f.value.pwd2" class="form-group">
+        <div class="col-md-offset-4 col-md-4 alert alert-warning">
+          密码不一致
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="control-label col-md-2 col-md-offset-2" for="name">
+          昵称
+        </label>
+        <div class="col-md-4">
+          <input type="text" name="name" class="form-control" placeholder="昵称" ngModel>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <div class="col-md-4 col-md-offset-4">
+          <button class="btn btn-success pull-left" (click)="registe(f.value)" [disabled]="!f.value.name || !f.value.pwd || (f.value.pwd != f.value.pwd2) || !f.value.email" data-target="#myModal" data-toggle="modal">注册</button>
+          <button class="btn btn-default pull-right" type="reset">清除</button>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</div>
