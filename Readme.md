@@ -1,4 +1,5 @@
 [TOC]
+
 # 基于Angular2+bootstrap+nodejs+mongoose+RxJS搭建的多人博客系统
 ### 介绍
 1. 项目介绍：该前端采用了Angular2作为框架，bootstrap作为样式设计框架；服务端使用nodejs的express框架进行搭建，使用mongodb数据库进行数据的存储；所有的异步操作，都是使用RxJS进行完成的。其中，我并未采用其原生的express框架，而是在它的基础上进行了自己的改造，当然，还是基于MVC模型的，不过V层的逻辑在前端就已经实现好了，所以服务端只需关注M层和C层即可。
