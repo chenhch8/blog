@@ -79,4 +79,5 @@ this.alertService.message.emit({ message: res.msg, callback: this.navToHome.bind
 4. 登陆页
 ![](./screenshot/login.png) 
 5. 文章详情页
+
 ![](./screenshot/article.png) 
